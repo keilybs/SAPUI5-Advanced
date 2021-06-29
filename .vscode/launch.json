@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run AppList-List",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/applist-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/logaliList/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/List",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/AppList/List\"}"
+      },
+      "envFile": "${workspaceFolder}/List/.env1",
+      "preLaunchTask": "Build AppList"
+    }
+  ]
+}
