@@ -1,9 +1,9 @@
 // @ts-nocheck
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "logaligroup/Employees/controller/Base.controller",
     "logaligroup/Employees/model/formatter",
     "sap/m/MessageBox"
-], function (Controller, formatter, MessageBox) {
+], function (Base, formatter, MessageBox) {
 
     function onInit() {
         this._bus = sap.ui.getCore().getEventBus();
@@ -37,7 +37,7 @@ sap.ui.define([
                         EmployeeId: contexjObj.EmployeeId
                     });
                 }
-                
+
             }.bind(this)
         });
     };
@@ -119,15 +119,13 @@ sap.ui.define([
         context.getModel().refresh();
     };
 
-
-    var EmployeeDetails = Controller.extend("logaligroup.Employees.controller.EmployeeDetails", {});
+    var EmployeeDetails = Base.extend("logaligroup.Employees.controller.EmployeeDetails", {});
 
     EmployeeDetails.prototype.onInit = onInit;
     EmployeeDetails.prototype.onCreateIncidence = onCreateIncidence;
     EmployeeDetails.prototype.onDeleteIncidence = onDeleteIncidence;
     EmployeeDetails.prototype.Formatter = formatter;
     EmployeeDetails.prototype.onSaveIncidence = onSaveIncidence;
-
     EmployeeDetails.prototype.updateIncidenceCreationDate = updateIncidenceCreationDate;
     EmployeeDetails.prototype.updateIncidenceReason = updateIncidenceReason;
     EmployeeDetails.prototype.updateIncidenceType = updateIncidenceType;
