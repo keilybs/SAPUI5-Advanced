@@ -83,7 +83,7 @@ sap.ui.define([
                     window.history.go(-1);
                 } else {
                     var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                    oRouter.navTo("RouteMain", true);
+                    oRouter.navTo("RouteMain",{},true);
                 }
             },
 
